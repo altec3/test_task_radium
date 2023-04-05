@@ -1,0 +1,7 @@
+/temp/
+__pycache__/
+venv/
+.idea/
+.env
+/.cache/
+/.pytest_cache/
