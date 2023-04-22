@@ -31,7 +31,9 @@ async def main(url: str):
 
         # Скачаем файлы (по умолчанию, макс. 3 задачи)
         for links in split_list(download_links):
-            tasks = [asyncio.create_task(download_file(session=session, link=link, output_dir=temp_dir)) for link in links]
+            tasks = [asyncio.create_task(
+                download_file(session=session, link=link, output_dir=temp_dir)
+            ) for link in links]
             results = await asyncio.gather(*tasks)
             for result in results:
                 if result:
